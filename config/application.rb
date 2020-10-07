@@ -10,7 +10,9 @@ module SmartRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-    config.logger = Logger.new(STDOUT)
+    config.logger           = ActiveSupport::Logger.new(STDOUT)
+    config.logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(config.logger )
     config.log_level = :debug
 
     # Settings in config/environments/* take precedence over those specified here.
