@@ -10,9 +10,8 @@ module SmartRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-
-    logger = Rails.logger
-    logger.info 'Serving http://localhost:3000'
+    config.logger = Logger.new(STDOUT)
+    config.log_level = :debug
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

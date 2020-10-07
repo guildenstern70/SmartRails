@@ -1,8 +1,9 @@
 # Load the Rails application.
 require_relative 'application'
 
-Rails.logger = Logger.new(STDOUT)
-config.logger = ActiveSupport::Logger.new("log/#{Rails.env}.log")
-
 # Initialize the Rails application.
 Rails.application.initialize!
+
+environ = ENV.fetch('RAILS_ENV')
+Rails.logger.info('Environment > ' + environ)
+Rails.logger.info('Serving: http://localhost:3000')
