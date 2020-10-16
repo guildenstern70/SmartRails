@@ -1,3 +1,10 @@
+#
+# SmartRails
+# Ruby on Rails Project
+# (C) Alessio Saltarin 2020
+# MIT License
+#
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -10,7 +17,7 @@ module SmartRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-    config.logger           = ActiveSupport::Logger.new(STDOUT)
+    config.logger = ActiveSupport::Logger.new(STDOUT)
     config.logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(config.logger )
     config.log_level = :debug

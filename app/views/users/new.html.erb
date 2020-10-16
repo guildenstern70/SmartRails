@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Welcome to SmartRails. Please register:</h5>
+    <div>
+      <% content_for :content do %>
+        <h1>Sign Up</h1>
+        <%= bootstrap_form_for @user do |f| %>
+          <%= f.text_field :username, placeholder: 'Choose your username', required: true %>
+          <%= f.password_field :password, placeholder: 'Choose your password', required: true %>
+          <%= f.password_field :password_confirmation, placeholder: 'Re-type your password', required: true %>
+          <%= f.submit "Register" %>
+        <%end%>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,14 @@
+<% content_for :content do %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Welcome to SmartRails. Please log in:</h5>
+      <%= bootstrap_form_tag url: '/login' do |f| %>
+        <%= f.text_field :username, placeholder: 'Your username' %>
+        <%= f.password_field :password, placeholder: 'Your password' %>
+        <%= f.submit "Login"%>
+      <%end%>
+    </div>
+  </div>
+<% end %>
+
+

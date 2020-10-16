@@ -1,24 +1,13 @@
-# README
+# SmartRails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SmartRails is a template application written in Ruby (2.7.x) on Rails (6.0.x). 
+It uses SQLite as database and Bootstrap as Rensponsive UI library.
 
-Things you may want to cover:
+### Initialize DB
 
-* Ruby version
+    rake db:create
+    rake db:migrate
+    
+### Run application
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    rails server

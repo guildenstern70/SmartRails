@@ -5,7 +5,6 @@
 # MIT License
 #
 
-
-class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true
+class User < ApplicationRecord
+  has_secure_password
 end

@@ -1,3 +1,11 @@
+#
+# SmartRails
+# Ruby on Rails Project
+# (C) Alessio Saltarin 2020
+# MIT License
+#
+
+
 class ApplicationJob < ActiveJob::Base
   # Automatically retry jobs that encountered a deadlock
   # retry_on ActiveRecord::Deadlocked
