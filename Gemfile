@@ -5,8 +5,10 @@ ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
-# Use sqlite3 as the database for Active Record
+# Use sqlite3 as the database for Development
 gem 'sqlite3', '~> 1.4'
+# Use postgresql as the database for Trst
+gem 'pg', '~> 1.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -18,7 +20,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Bootstrap forms
-gem "bootstrap_form", "~> 4.0"
+gem 'bootstrap_form', '~> 4.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 

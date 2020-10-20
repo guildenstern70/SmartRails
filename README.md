@@ -5,9 +5,20 @@ It uses SQLite as database and Bootstrap as Rensponsive UI library.
 
 ### Initialize DB
 
+Only if the database does not exits:
+
     rake db:create
+
+Normally:
+
     rake db:migrate
     
 ### Run application
 
     rails server
+    
+### Troubleshooting
+
+##### gem 'pg' is not installing 
+
+See: https://michaelrigart.be/install-pg-ruby-gem-without-postgresql/
