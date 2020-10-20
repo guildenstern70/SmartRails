@@ -6,21 +6,33 @@
 #
 
 class SessionsController < ApplicationController
+
+  #
+  # Called on Login GET
+  #
   def new
     logger.info('Sessions controller - new')
   end
 
+  #
+  # Called on Login POST
+  #
   def create
-    logger.info('Sessions controller - create')
+    @errors = false
+    logger.info('Sessions controller - create new session for user ' + params[:username])
     @user = User.find_by(username: params[:username])
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to '/welcome'
     else
-      redirect_to '/login'
+      @errors = true
+      render :new
     end
   end
 
+  #
+  # Called on Logout GET
+  #
   def logout
     logger.info('Sessions controller - logout')
     if logged_in?
@@ -30,7 +42,4 @@ class SessionsController < ApplicationController
     redirect_to '/welcome'
   end
 
-  def login
-    logger.info('Sessions controller - login')
-  end
 end

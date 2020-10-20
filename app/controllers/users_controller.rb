@@ -6,10 +6,17 @@
 #
 
 class UsersController < ApplicationController
+
+  #
+  # Called on Sign Up GET
+  #
   def new
     @user = User.new
   end
 
+  #
+  # Called on Sign Up POST
+  #
   def create
     @user = User.create(params.require(:user).permit(:username,
                                                      :password, :password_confirmation))
