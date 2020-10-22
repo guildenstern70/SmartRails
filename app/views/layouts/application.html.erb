@@ -12,12 +12,18 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <title>SmartRails</title>
+
+  <!-- Favicon -->
+  <%= favicon_link_tag asset_path('rails-512.png') %>
+
+  <!-- JavaScripts loaded from Packs -->
+  <%= yield :javascripts %>
+
 </head>
 <body>
 <div class="container topspace">
   <%= yield :content %>
 </div>
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

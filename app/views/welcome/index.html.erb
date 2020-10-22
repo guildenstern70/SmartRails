@@ -1,9 +1,9 @@
 <% content_for :content do %>
   <div class="jumbotron">
-    <h1 class="display-4">SmartRails</h1>
-    <p class="lead">This is a Ruby on Rails v6.x template. Version <%= @app_version %></p>
+    <h1 class="display-4 text-primary">SmartRails</h1>
+    <p class="lead">This is a Ruby on Rails v6.x template.</p>
     <hr class="my-4">
-    <p>It uses Bootstrap v.4 for responsive rendering and SQLite as database.</p>
+    <p>It uses Bootstrap v.4 for responsive rendering, SQLite as database and JQuery as JS library.</p>
     <% if logged_in? %>
       <p>You are logged in as <b><%= current_user.username %></b>. <a href="/sessions/logout">Logout</a></p>
       <a class="btn btn-primary btn-lg" href="#" role="button">Home</a>
@@ -11,6 +11,9 @@
       <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
       <a class="btn btn-secondary btn-lg" href="/users/new" role="button">Sign Up</a>
     <% end %>
+    <div class="caption text-primary">
+      SmartRails v.<%= @app_version %> - Environment: <%= @environment %>
+    </div>
   </div>
 <% end %>
 

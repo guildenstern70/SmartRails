@@ -13,7 +13,6 @@ rescue KeyError
   environ = 'DEV'
 ensure
   Rails.logger.info('Environment > ' + environ)
-  Rails.logger.info('Serving: http://localhost:3000')
 end
 
 # Initialize the Rails application.

@@ -1,17 +1,24 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Welcome to SmartRails. Please register:</h5>
-    <div>
-      <% content_for :content do %>
-        <h1>Sign Up</h1>
-        <%= bootstrap_form_for @user do |f| %>
-          <%= f.text_field :username, placeholder: 'Choose your username', required: true %>
-          <%= f.password_field :password, placeholder: 'Choose your password', required: true %>
-          <%= f.password_field :password_confirmation, placeholder: 'Re-type your password', required: true %>
-          <%= f.submit "Register" %>
-        <%end%>
-      <% end %>
+<% content_for :javascripts do %>
+  <%= javascript_pack_tag 'sessions' %>
+<% end %>
+
+<% content_for :central_column do %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Welcome to SmartRails.</h5>
+      <p>Please register:</p>
+          <%= bootstrap_form_for @user do |f| %>
+            <%= f.text_field :username, placeholder: 'Choose your username', required: true, label_class: "text-primary" %>
+            <%= f.password_field :password, placeholder: 'Choose your password', required: true, label_class: "text-primary" %>
+            <%= f.password_field :password_confirmation, placeholder: 'Re-type your password', required: true, label_class: "text-primary" %>
+            <%= f.submit "Register" %>
+            <input class="btn btn-primary" id="cancel" name="cancel" type="button" value="Cancel">
+          <%end%>
     </div>
   </div>
-</div>
+<% end %>
+
+<%= render "layouts/shared/threecolumns" %>
+
+
 
