@@ -5,11 +5,12 @@
     <hr class="my-4">
     <p>It uses Bootstrap v.4 for responsive rendering, SQLite as database and JQuery as JS library.</p>
     <% if logged_in? %>
-      <p>You are logged in as <b><%= current_user.username %></b>. <a href="/sessions/logout">Logout</a></p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Home</a>
+      <p>You are logged in as <b><%= current_user.username %></b>.
+      <%= link_to "Logout", { :controller => "sessions", :action => "logout" } %></p>
+      <%= link_to "Home", { :controller => "home", :action => "home" }, class: "btn btn-primary btn-lg", "role" => "button" %>
     <% else %>
-      <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
-      <a class="btn btn-secondary btn-lg" href="/users/new" role="button">Sign Up</a>
+      <%= link_to "Login", { :controller => "sessions", :action => "new" }, class: "btn btn-primary btn-lg", "role" => "button" %>
+      <%= link_to "Register", { :controller => "users", :action => "new" }, class: "btn btn-secondary btn-lg", "role" => "button" %>
     <% end %>
     <div class="caption text-primary">
       SmartRails v.<%= @app_version %> - Environment: <%= @environment %>

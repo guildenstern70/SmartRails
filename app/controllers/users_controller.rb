@@ -22,7 +22,7 @@ class UsersController < ApplicationController
                                                      :password, :password_confirmation))
     if @user.valid?
       session[:user_id] = @user.id
-      redirect_to '/welcome'
+      redirect_to '/home/home'
     else
       logger.info(@user.errors.messages)
       render :new

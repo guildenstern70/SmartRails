@@ -1,0 +1,18 @@
+body {
+    padding-top: 56px;
+}
+
+.currentuser {
+    font-weight: bold;
+    text-transform:capitalize;
+}
+
+.smartrails {
+    font-weight: bold;
+    font-size: larger;
+    color: red;
+}
+
+.spanner {
+    margin: 15em;
+}
