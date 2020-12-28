@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
       logger.info('Logging out ' + current_user.username)
       session[:user_id] = nil
     end
-    redirect_to '/welcome'
+    redirect_to '/welcome/index'
   end
 
 end

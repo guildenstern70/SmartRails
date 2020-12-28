@@ -8,7 +8,7 @@
 Rails.application.routes.draw do
   resources :users, only: %i[new create]
   get 'sessions/new'
-  get 'sessions/create'
+  post 'sessions/create'
   get 'sessions/logout'
   get 'users/new'
   post 'users/create'
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  get 'welcome', to: 'welcome#index'
+  get 'welcome/index'
   root 'welcome#index'
 end
 

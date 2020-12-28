@@ -1,24 +1,19 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
+  test 'should get new' do
     get sessions_new_url
     assert_response :success
   end
 
-  test "should get create" do
-    get sessions_create_url
-    assert_response :success
+  test 'should create new session' do
+    post sessions_create_url, params: { username: 'alessio', password: 'doctor' }
+    assert_redirected_to controller: 'home', action: 'home'
   end
 
-  test "should get login" do
-    get sessions_login_url
-    assert_response :success
-  end
-
-  test "should get welcome" do
-    get sessions_welcome_url
-    assert_response :success
+  test 'should get logout' do
+    get sessions_logout_url
+    assert_redirected_to controller: 'welcome', action: 'index'
   end
 
 end

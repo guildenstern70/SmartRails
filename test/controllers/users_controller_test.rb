@@ -10,9 +10,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     post users_create_url, params: { user:
                                        { username: 'pippo',
                                          password: 'prova',
-                                         password_confirmation: 'prova'
-                                       }
-                                  }
+                                         password_confirmation: 'prova' } }
     assert_redirected_to controller: 'home', action: 'home'
   end
 
