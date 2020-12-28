@@ -1,0 +1,22 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Item #1
+  price: 10
+  stars: 1
+
+two:
+  name: Item #2
+  price: 11
+  stars: 2
+
+three:
+  name: Item #3
+  price: 12
+  stars: 3
+
+four:
+  name: Item #4
+  price: 13
+  stars: 4
+

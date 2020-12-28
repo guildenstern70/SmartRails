@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: doctor
+  username: alessio
   name: Alessio
   surname: Saltarin
-  password: MyString
+  password_digest: $2a$12$IF5WXGX5K1wEHSMtfNfX5OwLTVn/CVe6.ErsoscdNIRSZR5ddU2Dq
 
 two:
   username: guest
   name: John
   surname: Doe
-  password: MyString
+  password_digest: $2a$12$9A8icZVRpIWr.lpV2HJVY.WSsuq.Pfiw5nSzSv0yRMxwyyG1im0Nq

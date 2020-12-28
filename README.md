@@ -12,6 +12,14 @@ Only if the database does not exits:
 Normally:
 
     rake db:migrate
+
+Load initial data:
+
+    rake db:seed
+
+Rollback db
+
+    rake db:rollback
     
 ### Run application
 

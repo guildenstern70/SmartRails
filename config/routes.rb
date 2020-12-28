@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/logout'
   get 'users/new'
-  get 'users/create'
+  post 'users/create'
   get 'home/home'
   get 'home/services'
   get 'home/about'

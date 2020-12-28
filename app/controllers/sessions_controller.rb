@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   #
-  # Called on Login POST
+  # Create new session: called on Login POST
   #
   def create
     @errors = false
