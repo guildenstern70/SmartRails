@@ -9,6 +9,7 @@
 class HomeController < ApplicationController
 
   def home
+    @items = Item.all
     logger.info('Home Controller - page: home')
   end
 
