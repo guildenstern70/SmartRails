@@ -4,7 +4,7 @@
   <div class="container">
     <a class="navbar-brand" href="#">
       <%= image_tag "rails-512.png", :border => 0, :class => 'd-inline-block align-top', :size => '50x50' %>
-    </a><span class="smartrails align-middle">SmartRails</span>
+    </a><h3 class="smartrails align-middle">SmartRails</h3>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,16 +36,13 @@
 </nav>
 
 <!-- Page Content -->
-<div class="container">
+<div class="container topspace">
   <%= yield :main_content %>
 </div>
 <!-- /.container -->
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">
-  <div class="container">
-    <p class="m-0 text-center text-white">Copyright &copy; Alessio Saltarin 2020</p>
-  </div>
-  <!-- /.container -->
+    <div class="m-0 text-center text-white">Copyright &copy; Alessio Saltarin 2021</div>
 </footer>
 <% end %>
