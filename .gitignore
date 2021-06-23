@@ -1,4 +1,6 @@
 run-test.sh
+# IDE
+/.idea
 
 # Ignore bundler config.
 /.bundle
