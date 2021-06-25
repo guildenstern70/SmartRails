@@ -1,5 +1,5 @@
 {
-  "name": "SmartRails",
+  "name": "smart-rails",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

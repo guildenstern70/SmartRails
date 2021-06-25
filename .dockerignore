@@ -1,0 +1,8 @@
+log
+.git*
+db/*.sqlite3
+db/*.sqlite3-journal
+node_modules
+tmp
+*.md
+
