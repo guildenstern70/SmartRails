@@ -8,6 +8,14 @@
 SmartRails is a template application written in Ruby (2.7.x) on Rails (6.0.x). 
 It uses SQLite as database and Bootstrap as Rensponsive UI library.
 
+### Docker
+
+Build & Run docker image
+
+    docker build -t smartrails:1.0 .
+    docker run -p 8080:8080 smartrails:1.0
+
+
 ### Initialize DB
 
 Only if the database does not exits:
