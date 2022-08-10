@@ -4,9 +4,18 @@
 [![Build Status](https://travis-ci.com/guildenstern70/SmartRails.svg?branch=master)](https://travis-ci.com/guildenstern70/SmartRails)
 
 
-
 SmartRails is a template application written in Ruby (2.7.x) on Rails (6.0.x). 
 It uses SQLite as database and Bootstrap as Rensponsive UI library.
+
+### Setup Ruby And Gems
+
+Be sure to have 'ruby v.2.7.3' installed. It is recommended to use 'rbenv' Ruby Version Manager to switch 
+between a Ruby versions.
+
+Then run:
+
+    bundle install
+
 
 ### Docker
 
