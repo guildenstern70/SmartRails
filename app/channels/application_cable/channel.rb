@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 #
-# SmartRails
-# Ruby on Rails Project
-# (C) Alessio Saltarin 2021
-# MIT License
+# Project SmartRails
+# Copyright (c) 2023 Alessio Saltarin
+# License MIT
 #
 
 module ApplicationCable

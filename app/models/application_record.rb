@@ -1,11 +1,11 @@
-#
-# SmartRails
-# Ruby on Rails Project
-# (C) Alessio Saltarin 2021
-# MIT License
-#
+# frozen_string_literal: true
 
+#
+# Project SmartRails
+# Copyright (c) 2023 Alessio Saltarin
+# License MIT
+#
 
 class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true
+  primary_abstract_class
 end

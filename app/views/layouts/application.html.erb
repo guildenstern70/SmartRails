@@ -1,23 +1,60 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
+  <title>SmartRails</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <title>SmartRails</title>
-  <!-- Favicon -->
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   <%= favicon_link_tag asset_path('rails-512.png') %>
-  <!-- JavaScripts loaded from Packs -->
-  <%= yield :javascripts %>
 </head>
+
 <body>
+
 <main>
-  <%= yield :content %>
+  <div class="container py-4">
+
+    <header class="p-3 mb-3 border-bottom">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+          <!-- Smart Rails Logo -->
+          <a href="/" class="d-flex align-items-center text-dark text-decoration-none mr-3">
+            <%= image_tag("ruby-on-rails-icon.svg", size: "32x32", alt: "Rails Logo") %>
+            <span class="fs-4 p-2 rails-red">SmartRails</span>
+          </a>
+
+          <% if logged_in? %>
+            <ul class="nav col-6 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/home/home" class="nav-link px-2 link-secondary">Home</a></li>
+              <li><a href="/items/index" class="nav-link px-2 link-dark">Inventory</a></li>
+              <li><a href="/home/services" class="nav-link px-2 link-dark">Services</a></li>
+            </ul>
+
+            <div class="dropdown text-end">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="/login/profile">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <%= link_to "Sign out", { :controller => "login", :action => "logout" }, class: "dropdown-item" %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </header>
+
+
+
+    <%= yield %>
+  </div>
 </main>
 </body>
 </html>
-
-

@@ -1,10 +1,10 @@
-#
-# SmartRails
-# Ruby on Rails Project
-# (C) Alessio Saltarin 2021
-# MIT License
-#
+# frozen_string_literal: true
 
+#
+# Project SmartRails
+# Copyright (c) 2023 Alessio Saltarin
+# License MIT
+#
 
 class ApplicationJob < ActiveJob::Base
   # Automatically retry jobs that encountered a deadlock

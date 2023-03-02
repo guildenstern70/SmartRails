@@ -4,51 +4,85 @@
 [![Build Status](https://travis-ci.com/guildenstern70/SmartRails.svg?branch=master)](https://travis-ci.com/guildenstern70/SmartRails)
 
 
-SmartRails is a template application written in Ruby (2.7.x) on Rails (6.0.x). 
-It uses SQLite as database and Bootstrap as Rensponsive UI library.
+SmartRails is a template application written in Ruby (3.2.x) on Rails (7.0.x).
+It uses the following components and libraries:
+
+- [SQLite 3](https://www.sqlite.org/)
+- [ESBuild](https://esbuild.github.io/)
+- [Stimulus](https://stimulus.hotwired.dev/)
 
 ### Setup Ruby And Gems
 
-Be sure to have 'ruby v.2.7.3' installed. It is recommended to use 'rbenv' Ruby Version Manager to switch 
-between a Ruby versions.
+Be sure to have 'ruby v.3.2.x' installed. It is recommended to use 'rbenv' Ruby Version Manager to switch
+between Ruby versions.
 
 Then run:
 
     bundle install
+
+### Development run
+
+    ./bin/dev
 
 
 ### Docker
 
 Build & Run docker image
 
-    docker build -t smartrails:1.0 .
-    docker run -p 8080:8080 smartrails:1.0
+    docker build --platform linux/amd64 -t smartrails:2.0 .
+    docker run -p 8080:8080 smartrails:2.0
 
 
-### Initialize DB
+### Data model and database
 
-Only if the database does not exits:
+Ruby on Rails DOES NOT automatically create models from migrations. Instead, you create the model with:
 
-    rake db:create
+    bin/rails generate migration [migration_name] [columns]
 
-Normally:
+and the model class with its migration will be created. The 'model' class in Ruby has the same attributes 
+found in the correspondent table.
 
-    rake db:migrate
+For instance, model class Item:
+
+    class Item < ApplicationRecord
+    end
+
+is only apparently empty: it takes the fields found in "Item" table on database. It also works as a "items"
+repository.
+
+To create the database if it does not exits:
+
+    bin/rails db:create  
+
+Then apply migrations with:
+
+    bin/rails db:migrate  
 
 Load initial data:
 
-    rake db:seed
+    bin/rails db:seed
 
 Rollback db
 
-    rake db:rollback
+    bin/rails db:rollback 
+
+To add a migration/model:
+
+    bin/rails generate migration [migration_name] [columns]
     
+
 ### Run application
 
-    rails server
-    
-### Troubleshooting
+During development:
 
-##### gem 'pg' is not installing 
+    bin/dev
 
-See: https://michaelrigart.be/install-pg-ruby-gem-without-postgresql/
+else:
+
+    bin/rails server
+
+### Run unit tests
+
+    bin/rails test
+
+

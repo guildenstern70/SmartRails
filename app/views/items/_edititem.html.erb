@@ -1,0 +1,28 @@
+<div class="modal fade" id="editModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_with url: "/items/update", :html => { :id => "modal-form" }, method: :post do |form| %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+        <div class="modal-header">
+          <h5 id="modal-title" class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= form.hidden_field :id  %>
+          <div class="mb-3">
+            <label for="partnumber" class="form-label">Part number</label>
+            <%= form.text_field :partnumber, :class => "form-control", placeholder: "Item's part number"  %>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <%= form.text_field :description, :class => "form-control", placeholder: "Item's description"  %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <%= form.submit "Save changes", :class => "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_093528) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_02_17_133125) do
   create_table "items", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.integer "stars"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "part_number"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -25,9 +23,8 @@ ActiveRecord::Schema.define(version: 2020_12_28_093528) do
     t.string "name"
     t.string "surname"
     t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["username"], name: "index_users_on_username", unique: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

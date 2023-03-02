@@ -1,10 +1,18 @@
+# frozen_string_literal: true
+
+#
+# Project SmartRails
+# Copyright (c) 2023 Alessio Saltarin
+# License MIT
+#
+
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
 
 ## Users
 User.create([
@@ -22,37 +30,30 @@ User.create([
               }
             ])
 
-# Items
+## Items
 Item.create([
               {
-                name: 'Item #1',
-                price: 22,
-                stars: 3
+                part_number: '1298011',
+                description: 'Mart cable 21'
               },
               {
-                name: 'Item #2',
-                price: 14,
-                stars: 4
+                part_number: '1298012',
+                description: 'Mart cable 23'
               },
               {
-                name: 'Item #3',
-                price: 17,
-                stars: 2
+                part_number: '1298013',
+                description: 'Mart cable 25'
               },
               {
-                name: 'Item #4',
-                price: 120,
-                stars: 5
+                part_number: '1298014',
+                description: 'Mart cable 27'
               },
               {
-                name: 'Item #5',
-                price: 25,
-                stars: 2
+                part_number: '1298015',
+                description: 'Loreen cable 14'
               },
               {
-                name: 'Item #6',
-                price: 19,
-                stars: 3
+                part_number: '1298016',
+                description: 'Loreen cable 16'
               }
             ])
-
