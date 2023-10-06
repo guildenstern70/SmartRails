@@ -9,11 +9,10 @@
       <a href="https://stimulus.hotwired.dev/" target="_blank" rel=”noopener noreferrer”>Stimulus</a> JS Framework.
       <br /><br />
       Enjoy the new Rails in town - optimized for happiness.
-
     </p>
-    <% if !logged_in? %>
-      <a href="/login" class="mt-3 btn btn-primary btn-lg" type="button">Login</a>
-    <% end %>
+    <% unless logged_in? %>
+    <a href="/login" class="mt-3 btn btn-primary btn-lg" type="button">Login</a>
+    <%  end %>
   </div>
 </div>
 
