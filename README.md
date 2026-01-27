@@ -20,9 +20,20 @@ Then run:
 
     bundle install
 
+### Install JavaScript dependencies
+
+    yarn install
+
+
+### Setup database
+
+    bin/rails db:create
+    bin/rails db:migrate
+    bin/rails db:seed
+
 ### Development run
 
-    ./bin/dev
+    bin/dev
 
 
 ### Docker
