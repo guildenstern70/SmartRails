@@ -1,0 +1,39 @@
+#
+# Project SmartRails
+# Copyright (c) 2023-26 Alessio Saltarin
+# License MIT - see LICENSE
+#
+
+require "test_helper"
+
+class SessionsControllerTest < ActionDispatch::IntegrationTest
+  setup { @user = User.take }
+
+  test "new" do
+    get new_session_path
+    assert_response :success
+  end
+
+  test "create with valid credentials" do
+    post session_path, params: { username: @user.username, password: "password" }
+
+    assert_redirected_to root_path
+    assert cookies[:session_id]
+  end
+
+  test "create with invalid credentials" do
+    post session_path, params: { username: @user.username, password: "wrong" }
+
+    assert_redirected_to new_session_path
+    assert_nil cookies[:session_id]
+  end
+
+  test "destroy" do
+    sign_in_as(User.take)
+
+    delete session_path
+
+    assert_redirected_to home_index_path
+    assert_empty cookies[:session_id]
+  end
+end

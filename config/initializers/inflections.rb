@@ -1,8 +1,7 @@
-
 #
 # Project SmartRails
-# Copyright (c) 2023 Alessio Saltarin
-# License MIT
+# Copyright (c) 2023-26 Alessio Saltarin
+# License MIT - see LICENSE
 #
 
 # Be sure to restart your server when you modify this file.

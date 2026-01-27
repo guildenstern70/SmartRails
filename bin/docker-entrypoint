@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+#
+#
+# Project SmartRails
+# Copyright (c) 2023-26 Alessio Saltarin
+# License MIT - see LICENSE
+#
+#
+
+# If running the rails server then create or migrate existing database
+if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
+  ./bin/rails db:prepare
+fi
+
+exec "${@}"

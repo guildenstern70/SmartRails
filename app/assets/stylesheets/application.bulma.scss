@@ -1,0 +1,32 @@
+/*!
+ *
+ * Project SmartRails
+ * Copyright (c) 2023-26 Alessio Saltarin
+ * License MIT - see LICENSE
+ *
+ */
+@charset "utf-8";
+
+// Set your brand colors
+$french-blue: #2A4198;
+$bubblegum-pink: #EE657B;
+$carrot-orange: #F18F01;
+$pacific-cyan: #048BA8;
+$yellow-green: #99C24D;
+
+// Update Bulma's global variables
+@use "bulma/sass" with (
+  $family-primary: '"Nunito", sans-serif',
+  $primary: $pacific-cyan,
+  $link: $french-blue,
+  $info: $bubblegum-pink,
+  $success: $yellow-green,
+  $warning: $carrot-orange
+);
+
+// Import Nunit Google Font
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+
+

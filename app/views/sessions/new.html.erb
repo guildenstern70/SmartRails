@@ -1,0 +1,73 @@
+<%= stylesheet_link_tag "login", "data-turbo-track": "reload" %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4-desktop is-6-tablet">
+        <div class="box loginform ">
+          <h1 class="title has-text-centered has-text-danger">SmartRails</h1>
+
+          <% if flash[:alert] %>
+            <div class="notification is-danger is-light">
+              <%= flash[:alert] %>
+            </div>
+          <% end %>
+
+          <% if flash[:notice] %>
+            <div class="notification is-success is-light">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+
+          <%= form_with url: session_path do |form| %>
+            <div class="field">
+              <%= form.label :username, class: "label" %>
+              <div class="control has-icons-left">
+                <%= form.text_field :username, required: true, autofocus: true,
+                                    autocomplete: "username", placeholder: "Enter your username",
+                                    value: params[:username], class: "input" %>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <%= form.label :password, class: "label" %>
+              <div class="control has-icons-left">
+                <%= form.password_field :password, required: true,
+                                        autocomplete: "current-password",
+                                        placeholder: "Enter your password",
+                                        maxlength: 72, class: "input" %>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="checkbox">
+                <%= form.check_box :remember_me %>
+                Remember me
+              </label>
+            </div>
+
+            <div class="field mt-5">
+              <%= form.submit "Login", class: "button is-primary is-fullwidth" %>
+            </div>
+          <% end %>
+
+          <hr>
+
+          <div class="has-text-centered">
+            <%= link_to "Forgot password?", new_password_path, class: "is-size-7" %>
+          </div>
+        </div>
+
+        <div class="has-text-centered">
+          <%= link_to "Back", root_path, class: "button is-light mt-3" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

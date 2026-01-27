@@ -1,0 +1,10 @@
+# Project SmartRails
+# Copyright (c) 2023-26 Alessio Saltarin
+# License MIT - see LICENSE
+
+#!/usr/bin/env ruby
+
+require_relative "../config/environment"
+require "solid_queue/cli"
+
+SolidQueue::Cli.start(ARGV)

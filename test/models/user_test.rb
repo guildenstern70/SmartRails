@@ -1,11 +1,14 @@
+#
+# Project SmartRails
+# Copyright (c) 2023-26 Alessio Saltarin
+# License MIT - see LICENSE
+#
 
-
-require 'test_helper'
+require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  test 'Users are in the database' do
-    users = User.all
-    puts "Users are #{String(users.length)}"
-    assert users.length == 2
+  test "downcases and strips username" do
+    user = User.new(username: " USERNAME ")
+    assert_equal("username", user.username)
   end
 end

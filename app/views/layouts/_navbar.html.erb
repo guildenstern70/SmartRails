@@ -1,0 +1,71 @@
+<nav class="navbar is-white has-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <%= link_to root_path, class: "navbar-item" do %>
+        <%= image_tag "smartrails.svg", alt: "SmartRails Logo", style: "max-height: 2rem;" %>
+        <span class="has-text-weight-bold has-text-danger is-size-6">SmartRails</span>
+      <% end %>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarlinks" class="ml-6 navbar-menu">
+      <div class="navbar-start">
+        <%= link_to "Home", home_path, class: "navbar-item" %>
+        <%= link_to "About", about_path, class: "navbar-item" %>
+        <%= link_to "Contact", contact_path, class: "navbar-item" %>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link is-arrowless">
+            <span class="icon is-medium">
+              <i class="fas fa-user-circle fa-2x"></i>
+            </span>
+          </a>
+
+          <div class="navbar-dropdown is-right">
+            <% if authenticated? %>
+              <div class="navbar-item">
+                <strong>
+                <%= link_to Current.user.username, settings_root_path %>
+                </strong>
+              </div>
+              <hr class="navbar-divider">
+              <%= button_to "Sign Out", session_path, method: :delete, class: "navbar-item is-arrowless button is-white", style: "width: 100%; text-align: left; justify-content: flex-start; border: none;" %>
+            <% else %>
+              <%= link_to "Sign In", new_session_path, class: "navbar-item" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('turbo:load', () => {
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  });
+</script>

@@ -1,0 +1,12 @@
+# Project SmartRails
+# Copyright (c) 2023-26 Alessio Saltarin
+# License MIT - see LICENSE
+
+#!/usr/bin/env ruby
+require "rubygems"
+require "bundler/setup"
+
+# Explicit RuboCop config increases performance slightly while avoiding config confusion.
+ARGV.unshift("--config", File.expand_path("../.rubocop.yml", __dir__))
+
+load Gem.bin_path("rubocop", "rubocop")

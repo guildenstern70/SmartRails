@@ -1,12 +1,13 @@
 #
 # Project SmartRails
-# Copyright (c) 2023 Alessio Saltarin
-# License MIT
+# Copyright (c) 2023-26 Alessio Saltarin
+# License MIT - see LICENSE
 #
 
-ENV['RAILS_ENV'] ||= 'test'
-require_relative '../config/environment'
-require 'rails/test_help'
+ENV["RAILS_ENV"] ||= "test"
+require_relative "../config/environment"
+require "rails/test_help"
+require_relative "test_helpers/session_test_helper"
 
 module ActiveSupport
   class TestCase

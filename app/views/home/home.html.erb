@@ -1,23 +1,12 @@
-<div class="m-4 p-5 bg-light rounded-3">
-  <div class="container-fluid py-5">
-    <h1 class="display-5 fw-bold rails-red">Smart Rails</h1>
-    <p class="col-md-8 mb-2 fs-4">
-      <a href="https://rubyonrails.org/" target="_blank">Ruby On Rails</a> v7 template,
-      using <a href="https://getbootstrap.com/" target="_blank" rel=”noopener noreferrer”>Bootstrap</a> v5,
-      <a href="https://www.ruby-lang.org/en/" target="_blank" rel=”noopener noreferrer”>Ruby</a> v3,<br />
-      <a href="https://esbuild.github.io/" target="_blank" rel=”noopener noreferrer”>ESBuild</a> and
-      <a href="https://stimulus.hotwired.dev/" target="_blank" rel=”noopener noreferrer”>Stimulus</a> JS Framework.
-      <br /><br />
-      Enjoy the new Rails in town - optimized for happiness.
+<%= render "layouts/navbar" %>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Welcome back, <%= Current.user.username %>!</h1>
+    <p class="subtitle">
+      You are now logged into SmartRails.
     </p>
-    <% unless logged_in? %>
-    <a href="/login" class="mt-3 btn btn-primary btn-lg" type="button">Login</a>
-    <%  end %>
+    <div class="content">
+      <p>This is your private dashboard. Only authenticated users can see this page.</p>
+    </div>
   </div>
-</div>
-
-
-
-
-
-
+</section>

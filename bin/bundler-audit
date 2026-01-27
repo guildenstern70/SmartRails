@@ -1,0 +1,10 @@
+# Project SmartRails
+# Copyright (c) 2023-26 Alessio Saltarin
+# License MIT - see LICENSE
+
+#!/usr/bin/env ruby
+require_relative "../config/boot"
+require "bundler/audit/cli"
+
+ARGV.concat %w[ --config config/bundler-audit.yml ] if ARGV.empty? || ARGV.include?("check")
+Bundler::Audit::CLI.start

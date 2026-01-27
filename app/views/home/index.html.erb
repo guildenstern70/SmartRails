@@ -1,0 +1,71 @@
+<% content_for :head do %>
+  <style>
+  :root {
+  --smart-blue: #1d4ed8;
+  --smart-red: #e11d48;
+  --smart-ink: #0f172a;
+  }
+
+  .smart-hero {
+  background: radial-gradient(120% 140% at 10% 0%, #3b82f6 0%, #1e3a8a 55%, #0f172a 100%);
+  position: relative;
+  overflow: hidden;
+  }
+
+  .smart-hero .hero-body {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  }
+
+  .smart-hero-title {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  }
+
+  .smart-hero-subtitle {
+  color: #e2e8f0;
+  max-width: 40rem;
+  }
+
+  .smart-rail-logo {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--smart-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  }
+
+  </style>
+
+<% end %>
+
+<section class="hero is-fullheight smart-hero">
+    <!-- Smart Rails Logo -->
+    <div class="smart-rail-logo" aria-label="Rails logo">
+      <%= image_tag("smartrails.svg", size: "120x50", alt: "SmartRails Logo") %>
+    </div>
+    <!-- Smart Rails Logo -->
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1 has-text-white smart-hero-title">SmartRails</h1>
+        <p class="subtitle is-4 smart-hero-subtitle has-text-info">
+          Enjoy the new Rails in town - optimized for happiness.
+        </p>
+        <div class="buttons">
+          <% if authenticated? %>
+            <%= link_to "Enter", { controller: "home", action: "home" }, class: "button is-danger is-medium" %>
+            <% else %>
+            <%= link_to "Login", { controller: "home", action: "home" }, class: "button is-danger is-medium" %>
+          <% end %>
+          <%= link_to "More...", home_more_path, class: "button is-link is-light is-medium" %>
+        </div>
+      </div>
+    </div>
+  </section>
+
