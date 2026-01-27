@@ -1,10 +1,11 @@
-<nav class="navbar is-white has-shadow" role="navigation" aria-label="main navigation">
+<nav class="navbar is-primary has-shadow" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <%= link_to root_path, class: "navbar-item" do %>
+
+      <div class="navbar-item">
         <%= image_tag "smartrails.svg", alt: "SmartRails Logo", style: "max-height: 2rem;" %>
         <span class="has-text-weight-bold has-text-danger is-size-6">SmartRails</span>
-      <% end %>
+      </div>
 
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -31,13 +32,9 @@
 
           <div class="navbar-dropdown is-right">
             <% if authenticated? %>
-              <div class="navbar-item">
-                <strong>
-                <%= link_to Current.user.username, settings_root_path %>
-                </strong>
-              </div>
+              <%= button_to Current.user.username, settings_root_path, class: "navbar-item is-arrowless button is-white" %>
               <hr class="navbar-divider">
-              <%= button_to "Sign Out", session_path, method: :delete, class: "navbar-item is-arrowless button is-white", style: "width: 100%; text-align: left; justify-content: flex-start; border: none;" %>
+              <%= button_to "Sign Out", session_path, method: :delete, class: "navbar-item is-arrowless button is-white" %>
             <% else %>
               <%= link_to "Sign In", new_session_path, class: "navbar-item" %>
             <% end %>
