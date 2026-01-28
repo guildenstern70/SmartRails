@@ -11,7 +11,7 @@ It uses the following components and libraries:
 
 ### Setup Ruby And Gems
 
-Be sure to have 'ruby v.4.x' installed. It is recommended to use 'rbenv' Ruby Version Manager to switch
+Be sure to have 'ruby v.4.x' installed. It is recommended to use 'mise' as Ruby Version Manager to switch
 between Ruby versions.
 
 Then run:
@@ -26,7 +26,7 @@ Then run:
 
 ### Development run
 
-    bin/rails server
+    ./bin/dev
 
 ### Run unit tests
 
