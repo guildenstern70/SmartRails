@@ -20,9 +20,9 @@ Then run:
 
 ### Setup database
 
-    bin/rails db:create
-    bin/rails db:migrate
-    bin/rails db:seed
+    ./bin/rails db:create
+    ./bin/rails db:migrate
+    ./bin/rails db:seed
 
 ### Development run
 

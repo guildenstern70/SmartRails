@@ -5,7 +5,9 @@
 #
 
 class HomeController < ApplicationController
-  allow_unauthenticated_access only: %i[ index more ]
+  allow_unauthenticated_access only: %i[index more]
+  before_action :set_current_page, only: %i[home about contact]
+
   def index
   end
 
@@ -19,5 +21,13 @@ class HomeController < ApplicationController
   end
 
   def more
+  end
+
+  private
+
+  def set_current_page
+    page_name = action_name
+    session[:currentpage] = page_name
+    Current.session&.update(currentpage: page_name)
   end
 end

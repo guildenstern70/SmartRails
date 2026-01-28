@@ -7,7 +7,7 @@
         <span class="has-text-weight-bold has-text-danger is-size-6">SmartRails</span>
       </div>
 
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarlinks">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -17,9 +17,9 @@
 
     <div id="navbarlinks" class="ml-6 navbar-menu">
       <div class="navbar-start">
-        <%= link_to "Home", home_path, class: "navbar-item" %>
-        <%= link_to "About", about_path, class: "navbar-item" %>
-        <%= link_to "Contact", contact_path, class: "navbar-item" %>
+        <%= link_to "Home", home_path, class: navbar_item_class("home") %>
+        <%= link_to "About", about_path, class: navbar_item_class("about") %>
+        <%= link_to "Contact", contact_path, class: navbar_item_class("contact") %>
       </div>
 
       <div class="navbar-end">
