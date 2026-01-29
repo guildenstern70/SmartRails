@@ -10,7 +10,7 @@ class Settings::ProfilesController < ApplicationController
 
   def update
     if Current.user.update(profile_params)
-      redirect_to settings_profile_path, status: :see_other, notice: "Your profile was updated successfully."
+      redirect_to settings_profiles_path, status: :see_other, notice: "Profile updated successfully."
     else
       render :show, status: :unprocessable_entity
     end
