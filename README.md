@@ -9,6 +9,9 @@ It uses the following components and libraries:
 - [ESBuild](https://esbuild.github.io/)
 - [Stimulus](https://stimulus.hotwired.dev/)
 
+
+## Getting Started
+
 ### Setup Ruby And Gems
 
 Be sure to have 'ruby v.4.x' installed. It is recommended to use 'mise' as Ruby Version Manager to switch
@@ -39,3 +42,14 @@ Then run:
 Fix issues with:
 
     bundle exec rubocop -A
+
+## Build container image
+
+    docker build -t smart_rails .
+
+Run with:
+
+    docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name smart_rails smart_rails
+
+Now, open your browser at `http://localhost`.
+
