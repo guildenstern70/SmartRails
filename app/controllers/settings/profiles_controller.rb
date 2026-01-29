@@ -5,6 +5,8 @@
 #
 
 class Settings::ProfilesController < ApplicationController
+  before_action :set_current_page, only: %i[show]
+
   def show
   end
 
@@ -17,6 +19,12 @@ class Settings::ProfilesController < ApplicationController
   end
 
   private
+
+  def set_current_page
+    session[:currentpage] = "profile"
+    Current.session&.update(currentpage: "profile")
+  end
+
   def profile_params
     params.expect(user: [ :name, :surname ])
   end

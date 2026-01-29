@@ -10,6 +10,6 @@ module ApplicationHelper
   end
 
   def navbar_item_class(page_name)
-    class_names("navbar-item", "is-active" => current_nav_page == page_name)
+    class_names("navbar-item", "is-active" => current_nav_page == page_name, "has-background-warning" => current_nav_page == page_name, "has-text-dark" => current_nav_page == page_name)
   end
 end

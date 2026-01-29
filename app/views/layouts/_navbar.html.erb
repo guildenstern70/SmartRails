@@ -32,7 +32,7 @@
 
           <div class="navbar-dropdown is-right">
             <% if authenticated? %>
-              <%= link_to Current.user.username, settings_root_path, class: "navbar-item is-arrowless button is-white" %>
+              <%= link_to Current.user.username, settings_root_path, class: navbar_item_class("profile") %>
               <hr class="navbar-divider">
               <%= link_to "Sign Out", session_path, method: :delete, class: "navbar-item is-arrowless button is-white" %>
             <% else %>
