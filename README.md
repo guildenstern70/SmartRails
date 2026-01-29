@@ -35,3 +35,7 @@ Then run:
 ### Lint and style
 
     bundle exec rubocop
+
+Fix issues with:
+
+    bundle exec rubocop -A
