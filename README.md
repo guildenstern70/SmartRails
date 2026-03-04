@@ -2,6 +2,8 @@
 
 SmartRails is a template application written in Ruby (4.x) on Rails (8.x).
 
+<img src="/app/assets/images/screenshot.png" alt="Screenshot" width="600"/>
+
 It uses the following components and libraries:
 
 - [SQLite 3](https://www.sqlite.org/)
