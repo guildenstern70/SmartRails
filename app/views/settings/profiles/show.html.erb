@@ -1,27 +1,65 @@
-<h1>Profile</h1>
+<%= render "layouts/navbar" %>
 
-<%= form_with model: Current.user, url: settings_profile_path do |form| %>
-  <% if form.object.errors.any? %>
-    <div>Error: <%= form.object.errors.full_messages.first %></div>
-  <% end %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <div class="box">
+          <h1 class="title has-text-centered">Profile</h1>
 
-  <div>
-    <b>Username:</b>
-    <%= form.object.username %>
+          <% if flash[:notice] %>
+            <div class="notification is-success is-light">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+
+          <%= form_with model: Current.user, url: settings_profiles_path do |form| %>
+            <% if form.object.errors.any? %>
+              <div class="notification is-danger is-light">
+                <p><strong>Error:</strong> <%= form.object.errors.full_messages.first %></p>
+              </div>
+            <% end %>
+
+            <div class="field">
+              <label class="label" for="username-readonly">Username</label>
+              <div class="control has-icons-left">
+                <input class="input" id="username-readonly" type="text" value="<%= form.object.username %>" disabled>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+              <p class="help">Username cannot be changed.</p>
+            </div>
+
+            <div class="field">
+              <%= form.label :name, class: "label" %>
+              <div class="control">
+                <%= form.text_field :name, required: true, autocomplete: "given-name", class: "input" %>
+              </div>
+            </div>
+
+            <div class="field">
+              <%= form.label :surname, class: "label" %>
+              <div class="control">
+                <%= form.text_field :surname, required: true, autocomplete: "family-name", class: "input" %>
+              </div>
+            </div>
+
+            <div class="field mt-5">
+              <div class="control">
+                <%= form.submit "Update profile", class: "button is-primary is-fullwidth" %>
+              </div>
+            </div>
+          <% end %>
+
+          <hr>
+
+          <div class="has-text-centered">
+            <%= link_to "Change password", new_password_path, class: "button is-link is-light" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name, required: true, autocomplete: "given-name" %>
-  </div>
-
-  <div>
-    <%= form.label :surname %>
-    <%= form.text_field :surname, required: true, autocomplete: "family-name" %>
-  </div>
-
-  <div>
-    <%= form.submit "Update profile" %>
-  </div>
-<% end %>
+</section>
 

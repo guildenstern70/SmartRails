@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   get "login" => "sessions#new"
 
   namespace :settings do
-    resource :password, only: [ :show, :update ]
-    resource :profile, only: [ :show, :update ]
+    resource :passwords, only: [ :show, :update ]
+    resource :profiles, only: [ :show, :update ]
 
-    root to: redirect("/settings/profile")
+    root "profiles#show"
   end
 
   root "home#index"
